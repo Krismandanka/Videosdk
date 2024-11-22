@@ -3,7 +3,7 @@ const User = require("../models/User");
 
 
 
-exports.signup = async (req, res) => {
+exports.userCreate = async (req, res) => {
 	try {
 		const {
 			firstName,

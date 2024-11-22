@@ -50,4 +50,4 @@ const mongoose = require("mongoose");
   });
 
 // Export the Mongoose model for the user schema, using the name "user"
-module.exports = mongoose.model("meeting", meetingSchemaSchema);
+module.exports = mongoose.model("meeting", meetingSchema);

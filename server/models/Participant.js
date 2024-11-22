@@ -4,10 +4,7 @@
 mongoose = require("mongoose");
 
 const participantSchema = new mongoose.Schema({
-    participantId: {
-      type: String,
-      required: true,
-    },
+   
     user: {
 		type: mongoose.Schema.Types.ObjectId,
 		// required: true,
@@ -20,8 +17,8 @@ const participantSchema = new mongoose.Schema({
     events: {
         
               type: mongoose.Schema.Types.ObjectId,
-              ref: "partEvent",
-              default: () => ({}),
+              ref: "partEvent"
+              
     },
     timelog: {
         type: [

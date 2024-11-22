@@ -13,6 +13,9 @@ const express=require('express');
 
 const app=express();
 
+const  userRoutes = require("./routes/userRoutes")
+const  meetRoutes = require("./routes/meetingRoutes")
+
 // const userRoutes=require('./routes/User');
 // const paymentRoutes=require('./routes/Payments');
 // const profileRoutes=require('./routes/Profile');
@@ -77,6 +80,9 @@ app.use(cors(
 
 // app.use('/api/v1/contact',require('./routes/ContactUs'));
 
+
+app.use('/api/v1',userRoutes);
+app.use("/api/meetings", meetRoutes);
 
 app.get("/",(req, res)=>{
     res.status(200).json({
