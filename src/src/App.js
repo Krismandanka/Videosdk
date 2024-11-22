@@ -89,7 +89,7 @@ const App = () => {
   return (
     <Router>
     <Routes>
-      <Route path="/" element={<MainEl />} />
+      <Route path="/sesson/:id" element={<MainEl />} />
     </Routes>
     </Router>
   );

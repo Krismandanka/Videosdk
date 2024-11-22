@@ -1,18 +1,19 @@
 import React from 'react'
 import TimelineWithIcons from "./TimelineWithIcons";
 import { useState,useEffect } from "react";
+import { useParams } from 'react-router-dom';
 const MainEl = () => {
+  const { id } = useParams(); 
     const [meetingData, setMeetingData] = useState(null);
 
     useEffect(() => {
       const fetchMeetingData = async () => {
         try {
           const response = await fetch(
-            "http://localhost:4000/api/meetings/getmeet/6740f083143200208dd140b5"
+            `http://localhost:4000/api/meetings/getmeet/${id}`
           );
           const data = await response.json();
   
-          // Map API response to timeline component data
           const mappedParticipants = data.meeting.participantArray.map((participant) => ({
             id: participant._id,
             name: participant.name,
