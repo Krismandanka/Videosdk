@@ -257,7 +257,6 @@ exports.getMeetingDetails = async (req, res) => {
     const { meetingId } = req.params;
   
     try {
-      // Find the meeting and populate related data
       const meetingDetails = await Meeting.findById(meetingId)
         .populate({
           path: "participantArray",
@@ -273,7 +272,7 @@ exports.getMeetingDetails = async (req, res) => {
             },
             {
               path: "timelog",
-              model: "event", // Fully populate timelog event details
+              model: "event", 
             },
           ],
         });
